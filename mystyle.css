@@ -41,3 +41,25 @@ table {
     border: 5px dashed red; 
     padding: 30px; 
 }
+
+.custom-paragraph {
+    text-align: center; 
+    text-decoration: underline;
+    text-transform: uppercase; 
+    font-family: monospace; 
+    font-size: 25px; 
+}
+
+.red-hover:hover {
+    color: red;
+}
+
+
+.gray-visited:visited {
+    color: gray;
+}
+
+
+.orange-active:active {
+    color: orange;
+}
