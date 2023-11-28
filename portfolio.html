@@ -132,6 +132,70 @@
         // Calling the function with the provided score hopefully
         calculateGrade(score);
     </script>
+       <!-- MAKING THE ID FOR "changeTextBtn" -->
+       <button id="changeTextBtn">Change Text</button>
+
+       <!-- MAKING THE ID FOR "displayText" -->
+       <p id="displayText">Original Text</p>
+   
+       <!-- SCRIPT FOR HOW THE BUTTON BEHAVES -->
+       <script>
+           // Get references to the button and paragraph by their IDs
+           const changeTextBtn = document.getElementById("changeTextBtn");
+           const displayText = document.getElementById("displayText");
+   
+           // ADD AN EVENT LISTENER THAT LOOKS FOR A CHANGE EXPERIENCED BY THE BUTTON
+           changeTextBtn.addEventListener("click", function() {
+               // CALL A FUNCTION TO CHANGE THE PRAGRAPH'S TEXT
+               changeText();
+           });
+   
+           // DEFINING WHAT THE ABOVE MENTIONED FUNCTION IS
+           function changeText() {
+               // LASTLY I CHANGHE THE TEXT CONTENT OF THE PARAGRAPH
+               displayText.textContent = "Hello, JavaScript World!";
+           }
+       </script>
+
+        <!-- FIRST I CREATE A FORM ELEMENT WITH THE INPUT FIELDS AND A SUBMIT BUTTON -->
+    <form id="myForm">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <!-- NOW A SCRIPT TO HANDLE THE FORM SUBMISSION -->
+    <script>
+        // REFER TO THE FORM BY ITS ID
+        const myForm = document.getElementById("myForm");
+
+        // MY FAVOURITE AND EVENT LISTENER TO LOOK OUT FOR THE "submit" EVENT
+        myForm.addEventListener("submit", function(event) {
+            // PREVENT THE DEFAULT FORM SUBMISSION.. JUST IN CASE MANDEM GET FUNNY
+            event.preventDefault();
+
+            // GET THE VALUES THE USER ENTERS
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            // CHECK  IF THE USERNAME AND PASSWORD ARE EMPTY
+            if (username.trim() === '' || password.trim() === '') {
+                // MAKE SOME NOISE USIING ALERT AND LET THE USER NO STOP PLAYING GAMES LOL
+                alert("Username and password cannot be empty!");
+            } else {
+                // USE setTimeout TO DELAY THE SUBMISSION FOR 3 SECONDS...AHEM.. SOME DRAMA FOR THEIR TROUBLES
+                setTimeout(function() {
+                    // SHOW THEM EVERYTHING IS GOING WELL
+                    alert("Form submitted successfully!");
+                    
+                }, 3000);
+            }
+        });
+    </script>
 
 </body>
 </html>
